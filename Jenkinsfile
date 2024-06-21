@@ -16,7 +16,6 @@ pipeline {
                 rm /tmp/file
                 rm /tmp/out
           '''
-    	}
     }
   }
 }
