@@ -2,6 +2,8 @@ pipeline {
   agent any
     stages {
       stage('usernamePassword') {
+              steps {
+        script {
       withCredentials([usernamePassword(credentialsId: 'GIT', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 
           sh '''env
@@ -17,6 +19,8 @@ pipeline {
                 rm /tmp/file
                 rm /tmp/out
           '''
+      }
+        }
       }
     }
   }
